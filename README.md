@@ -1,6 +1,5 @@
 # Frontend
 
-# Frontend
 
 # Product Vision Document
 
