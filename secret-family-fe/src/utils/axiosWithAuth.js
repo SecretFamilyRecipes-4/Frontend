@@ -8,6 +8,6 @@ export const axiosWithAuth = () => {
       Authorization: token,
     },
     //add API address
-    // baseURL: ''
+    baseURL: "https://secret-recipe-store.herokuapp.com",
   });
 };

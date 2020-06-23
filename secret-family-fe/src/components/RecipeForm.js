@@ -1,12 +1,8 @@
-//import deps
 import React from "react";
-import ReactDOM from "react-dom";
-import { withRouter as Router } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-
-//component import
-import { addRecipe } from "../Actions";
-import { ShowRecipeItem } from "./ShowRecipeItem";
+import { addRecipe } from "../actions";
+import ShowRecipeItem from "./ShowRecipeItem";
 
 class RecipeForm extends React.Component {
   state = {
@@ -179,7 +175,7 @@ class RecipeForm extends React.Component {
 
             {this.state.ingredients.map((ingredient, index) => (
               <div className='ingredient'>
-                <ShowArrayItem
+                <ShowRecipeItem
                   listNum={index + 1}
                   item={ingredient}
                   key={index}
@@ -202,7 +198,7 @@ class RecipeForm extends React.Component {
             <button onClick={this.addDirection}>Plus</button>
             {this.state.directions.map((direction, index) => (
               <div className='direction'>
-                <ShowArrayItem
+                <ShowRecipeItem
                   listNum={index + 1}
                   item={direction}
                   key={index}
@@ -271,4 +267,4 @@ const mapStateToProps = (state) => ({
   addingRecipe: state.addingRecipe,
 });
 
-export default Router(connect(mapStateToProps, { addRecipe })(RecipeForm));
+export default withRouter(connect(mapStateToProps, { addRecipe })(RecipeForm));
