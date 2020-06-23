@@ -1,11 +1,8 @@
-
 import React, { useState, useEffect } from "react";
 import * as yup from "yup";
 import axios from "axios";
 
-
 function LogIn() {
-
   const [errors, setErrors] = useState({
     name: "",
     email: "",
@@ -80,53 +77,49 @@ function LogIn() {
   };
   return (
     <div className='signup'>
-  
-        <h2>Secret Family Recipie</h2>
-        <h3>LogIn page</h3>
-      
+      <h2>Secret Family Recipie</h2>
+      <h3>LogIn page</h3>
 
       <form className='form' onSubmit={formSubmit}>
-            {/* //name */}
-            <label htmlFor='name'>
-              Name
-              <input
-                className='input'
-                type='text'
-                id='name'
-                name='name'
-                onChange={inputChange}
-                value={formState.name}
-              />
-                      {errors.name.length > 0 ? (
-                <p className='error'>{errors.name}</p>
-              ) : null}
-            </label>
+        {/* //name */}
+        <label htmlFor='name'>
+          Name
+          <input
+            className='input'
+            type='text'
+            id='name'
+            name='name'
+            onChange={inputChange}
+            value={formState.name}
+          />
+          {errors.name.length > 0 ? (
+            <p className='error'>{errors.name}</p>
+          ) : null}
+        </label>
 
-
-          {/* //email */}
-          <label htmlFor='email'>
-            Email
-            <input
-              className='input'
-              type='email'
-              id='email'
-              name='email'
-              onChange={inputChange}
-              value={formState.email}
-            />
-            {errors.email.length > 0 ? (
-              <p className='error'>{errors.email}</p>
-            ) : null}
-          </label>
-          <button className='button' disabled={buttonDisabled} type='submit'>
-            Submit
-          </button>
-          <button className='button' disabled={buttonDisabled} type='submit'>
-            LogIn
-          </button>
-        </form>
-      </div>
-    
+        {/* //email */}
+        <label htmlFor='email'>
+          Email
+          <input
+            className='input'
+            type='email'
+            id='email'
+            name='email'
+            onChange={inputChange}
+            value={formState.email}
+          />
+          {errors.email.length > 0 ? (
+            <p className='error'>{errors.email}</p>
+          ) : null}
+        </label>
+        <button className='button' disabled={buttonDisabled} type='submit'>
+          Submit
+        </button>
+        <button className='button' disabled={buttonDisabled} type='submit'>
+          LogIn
+        </button>
+      </form>
+    </div>
   );
 }
 
