@@ -134,9 +134,14 @@ table {
   text-align: center;
   width: auto;
 }
+/* green: #07FE20
+gray: #828080
+mine shaft: #2F2D2d
+Brand Black: ##1F1E1E */
 html {
-  font-family: "Lora", serif;
-  background-color: #136b72;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  background-color: #1f1e1e;
+  color: white;
 }
 .signup-page-wrapper {
   width: 80vw;
@@ -164,7 +169,7 @@ html {
 }
 .signup-form input {
   width: 94%;
-  color: darkslategray;
+  color: #2f2d2d;
   padding: 0.5em;
   border-radius: 5px;
   border: 2px solid #d8e4da;
@@ -180,7 +185,7 @@ html {
 }
 .signup-form-header h2 {
   font-size: 1.5em;
-  color: #136b72;
+  color: #2f2d2d;
 }
 .signup-logo {
   display: block;
@@ -194,8 +199,12 @@ html {
   font-size: 1em;
   padding: 0.5em;
   border-radius: 5px;
-  background-color: #1a949e;
-  color: #d8e4da;
+  background-color: #2f2d2d;
+  /* green: #07FE20
+gray: #828080
+mine shaft: #2F2D2d
+Brand Black: ##1F1E1E */
+  color: #2f2d2d;
   text-align: center;
   width: 100%;
   height: auto;
@@ -205,7 +214,8 @@ html {
   margin: 1em auto 3px;
 }
 .signup-btn:hover {
-  background-color: #136b72;
+  background-color: #2f2d2d;
+  color: white;
 }
 .signup-small-font {
   font-size: 0.85em;
@@ -213,14 +223,23 @@ html {
   text-align: right;
 }
 .signup-link {
-  color: #136b72;
+  color: #07fe20;
 }
+/* green: #07FE20
+gray: #828080
+mine shaft: #2F2D2d
+Brand Black: ##1F1E1E */
+
 .login-page-wrapper {
   width: 80vw;
   height: 80vh;
-  background-color: #136b72;
+  background-color: #2f2d2d;
   padding: 5vw 10vw 10vw;
 }
+/* green: #07FE20
+gray: #828080
+mine shaft: #2F2D2d
+Brand Black: ##1F1E1E */
 .login-form-wrapper {
   margin: 10vh auto;
   width: 80vw;
@@ -239,9 +258,13 @@ html {
   top: 10%;
   width: 35vw;
 }
+/* green: #07FE20
+gray: #828080
+mine shaft: #2F2D2d
+Brand Black: ##1F1E1E */
 .login-form input {
   width: 94%;
-  color: darkslategray;
+  color: #2f2d2d;
   padding: 0.5em;
   border-radius: 5px;
   border: 2px solid #d8e4da;
@@ -260,9 +283,14 @@ html {
 .login-form-header {
   text-align: center;
 }
+
+/* green: #07FE20
+gray: #828080
+mine shaft: #2F2D2d
+Brand Black: ##1F1E1E */
 .login-form-header h2 {
   font-size: 1.5em;
-  color: #136b72;
+  color: #2f2d2d;
   margin-top: 0.5em;
 }
 .login-form-header h3 {
@@ -277,12 +305,16 @@ html {
   margin-right: auto;
   margin-bottom: 5px;
 }
+/* green: #07FE20
+gray: #828080
+mine shaft: #2F2D2d
+Brand Black: ##1F1E1E */
 .login-btn {
   font-size: 1em;
   padding: 0.5em;
   border-radius: 5px;
-  background-color: #1a949e;
-  color: #d8e4da;
+  background-color: #2f2d2d;
+  color: #07fe20;
   text-align: center;
   width: 100%;
   height: auto;
@@ -292,10 +324,11 @@ html {
   margin: 1.5em auto 3px;
 }
 .login-btn:hover {
-  background-color: #136b72;
+  background-color: #2f2d2d;
+  color: white;
 }
 .login-link {
-  color: #136b72;
+  color: #07fe20;
 }
 .recipe-cards-wrapper {
   display: flex;
@@ -330,7 +363,7 @@ html {
 .nav {
   display: flex;
   justify-content: space-between;
-  background: #aae4ec;
+  background: #2f2d2d;
 }
 .nav-logo-set {
   display: flex;
@@ -341,12 +374,17 @@ html {
   height: 80px;
   width: 80px;
 }
+/* green: #07FE20
+gray: #828080
+mine shaft: #2F2D2d
+Brand Black: ##1F1E1E */
+
 .nav-title {
   display: flex;
   align-items: center;
   padding-bottom: 5px;
   font-size: 60px;
-  color: #136b72;
+  color: whitesmoke;
 }
 .search-wrapper {
   width: 100%;
