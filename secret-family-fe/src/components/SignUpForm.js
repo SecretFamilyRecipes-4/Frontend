@@ -120,6 +120,9 @@ function SignUp() {
           <button className='button' disabled={buttonDisabled} type='submit'>
             Submit
           </button>
+          <button className='button' disabled={buttonDisabled} type='submit'>
+            LogIn
+          </button>
         </form>
       </div>
     
