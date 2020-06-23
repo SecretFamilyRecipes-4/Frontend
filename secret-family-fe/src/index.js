@@ -7,7 +7,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
 import appReducer from "./reducers";
 import "./css/main.css";
-
+import App from './App.js'
 import LogIn from "./components/LogIn";
 import SignUpPage from "./views/SignUpPage";
 import AddRecipe from "./views/AddRecipe";
@@ -26,16 +26,8 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <Switch>
-        <PrivateRoute exact path='/' component={RecipesDashboard} />
-        {/* <Route path='/log-in' component={LoginPage} /> */}
-        <Route path='/login'>
-          <LogIn />
-        </Route>
-        <PrivateRoute path='/recipes/view/:id' component={SingleRecipe} />
-        <PrivateRoute path='/recipes/edit/:id' component={UpdateRecipe} />
-        <PrivateRoute path='/add-recipe' component={AddRecipe} />
-      </Switch>
+
+      <App></App>
     </Router>
   </Provider>,
   document.getElementById("root")

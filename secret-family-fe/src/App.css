@@ -38,6 +38,9 @@
 }
 
 body {
-  background-color: #1f1e1e;
+  background-color: white;
+  color:red;
+}
+.header {
   color: white;
 }
