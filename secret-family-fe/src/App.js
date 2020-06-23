@@ -24,6 +24,7 @@ function App() {
     <Switch>
         <PrivateRoute exact path='/' component={RecipesDashboard} />
         <Route path='/log-in' component={LogIn} />
+        <Route path='/sign-up' component={SignUp} />
         <Route path='/login'>
           <LogIn />
         </Route>

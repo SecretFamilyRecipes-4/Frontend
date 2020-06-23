@@ -1,27 +1,28 @@
 import React, { useState, useEffect } from "react";
+import { Route, Link, Switch } from "react-router-dom";
 import * as yup from "yup";
 import axios from "axios";
 
 function LogIn() {
   const [errors, setErrors] = useState({
-    name: "",
-    email: "",
+    username: "",
+    password: "",
     login: "",
   });
 
   const [buttonDisabled, setButtonDisabled] = useState("");
   const [formState, setFormState] = useState({
-    name: "",
-    email: "",
+    username: "",
+    password: "",
     submit: false,
   });
   const [post, setPost] = useState([]);
   const formSchema = yup.object().shape({
-    name: yup
+    username: yup
       .string()
       .required("Enter your name here please")
       .min(2, "Your real name must be longer than 2 characters"),
-    email: yup.string(),
+    password: yup.string(),
     submit: yup.boolean(),
   });
 
@@ -34,12 +35,12 @@ function LogIn() {
 
   const validateChange = (e) => {
     yup
-      .reach(formSchema, e.target.name)
+      .reach(formSchema, e.target.username)
       .validate(e.target.value)
       .then((valid) => {
         setErrors({
           ...errors,
-          [e.target.name]: "",
+          [e.target.username]: "",
         });
       })
       .catch((err) => {
@@ -53,7 +54,7 @@ function LogIn() {
     e.persist();
     const newFormData = {
       ...formState,
-      [e.target.name]:
+      [e.target.username]:
         e.target.type === "checkbox" ? e.target.checked : e.target.value,
     };
     validateChange(e);
@@ -67,8 +68,8 @@ function LogIn() {
         setPost(res.data);
         console.log("success", post);
         setFormState({
-          name: "",
-          email: "",
+          username: "",
+          password: "",
         });
       })
       .catch((err) => {
@@ -76,48 +77,52 @@ function LogIn() {
       });
   };
   return (
-    <div className='signup'>
+    <div className='login'>
       <h2>Secret Family Recipie</h2>
       <h3>LogIn page</h3>
 
       <form className='form' onSubmit={formSubmit}>
         {/* //name */}
-        <label htmlFor='name'>
-          Name
+        <label htmlFor='username'>
+          Username
           <input
             className='input'
             type='text'
-            id='name'
-            name='name'
+            id='username'
+            name='username'
             onChange={inputChange}
-            value={formState.name}
+            value={formState.username}
           />
-          {errors.name.length > 0 ? (
-            <p className='error'>{errors.name}</p>
+          {errors.username.length > 0 ? (
+            <p className='error'>{errors.username}</p>
           ) : null}
         </label>
 
         {/* //email */}
-        <label htmlFor='email'>
-          Email
+        <label htmlFor='password'>
+          Password
           <input
             className='input'
-            type='email'
-            id='email'
-            name='email'
+            type='password'
+            id='password'
+            name='password'
             onChange={inputChange}
-            value={formState.email}
+            value={formState.password}
           />
-          {errors.email.length > 0 ? (
-            <p className='error'>{errors.email}</p>
+          {errors.password.length > 0 ? (
+            <p className='error'>{errors.password}</p>
           ) : null}
         </label>
-        <button className='button' disabled={buttonDisabled} type='submit'>
-          Submit
-        </button>
-        <button className='button' disabled={buttonDisabled} type='submit'>
-          LogIn
-        </button>
+
+        <button className='login-btn' type='submit'>
+              Log In
+            </button>
+               <p className='signup-small-font'></p>
+                 Not a member yet? Sign Up{" "}
+              <Link to='/sign-up' className='signup-link'>
+                  here
+              </Link>
+
       </form>
     </div>
   );

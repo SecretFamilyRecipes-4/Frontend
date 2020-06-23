@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from "react";
+import { Route, Link, Switch } from "react-router-dom";
 import * as yup from "yup";
 import axios from "axios";
 
@@ -118,12 +119,16 @@ function SignUp() {
               <p className='error'>{errors.email}</p>
             ) : null}
           </label>
-          <button className='button' disabled={buttonDisabled} type='submit'>
-            Submit
-          </button>
-          <button className='button' disabled={buttonDisabled} type='submit'>
-            LogIn
-          </button>
+
+          <button className='signup-btn' type='submit'>
+              Sign Up
+            </button>
+               <p className='signup-small-font'></p>
+                 Already a member up? Log in here{" "}
+              <Link to='/log-in' className='signup-link'>
+                  here
+              </Link>
+
         </form>
       </div>
     
