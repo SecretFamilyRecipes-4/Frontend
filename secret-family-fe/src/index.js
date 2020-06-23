@@ -5,10 +5,10 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
-import rootReducer from "./reducers";
+import appReducer from "./reducers";
 import "./css/main.css";
 
-import LoginPage from "./views/LoginPage";
+import LogIn from "./components/LogIn";
 import SignUpPage from "./views/SignUpPage";
 import AddRecipe from "./views/AddRecipe";
 import RecipesDashboard from "./views/RecipesDashboard";
@@ -19,7 +19,7 @@ import PrivateRoute from "./components/PrivateRoute";
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-  rootReducer,
+  appReducer,
   composeEnhancers(applyMiddleware(thunk, logger))
 );
 
@@ -28,8 +28,10 @@ ReactDOM.render(
     <Router>
       <Switch>
         <PrivateRoute exact path='/' component={RecipesDashboard} />
-        <Route path='/log-in' component={LoginPage} />
-        <Route path='/sign-up' component={SignUpPage} />
+        {/* <Route path='/log-in' component={LoginPage} /> */}
+        <Route path='/login'>
+          <LogIn />
+        </Route>
         <PrivateRoute path='/recipes/view/:id' component={SingleRecipe} />
         <PrivateRoute path='/recipes/edit/:id' component={UpdateRecipe} />
         <PrivateRoute path='/add-recipe' component={AddRecipe} />
