@@ -121,6 +121,9 @@ function SignUp() {
           <button className='button' disabled={buttonDisabled} type='submit'>
             Submit
           </button>
+          <button className='button' disabled={buttonDisabled} type='submit'>
+            LogIn
+          </button>
         </form>
       </div>
     
@@ -238,3 +241,6 @@ export default SignUp;
 // });
 
 // export default withRouter(connect(mapStateToProps, { signUp })(SignUpForm));
+
+
+//// this is getting on my nerves
