@@ -1,5 +1,5 @@
 import React from "react";
-import RecipeSidebar from "../components/RecipeSidebar";
+import RecipeSidebar from "../components/RecipeSideBar";
 
 import Navigation from "../components/Navigation";
 import TagSearch from "../components/TagSearch";
