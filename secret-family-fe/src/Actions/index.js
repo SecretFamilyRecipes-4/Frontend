@@ -64,7 +64,7 @@ export const FETCH_RECIPE_FAILURE = "FETCH_RECIPE_FAILURE";
 export const getRecipe = (recipeID) => (dispatch) => {
   dispatch({ type: FETCH_RECIPE_START });
   axiosWithAuth()
-    .get(`/recipes/${recipeID}`)
+    .get(`/api/recipe/${recipeID}`)
     .then((res) => {
       dispatch({ type: FETCH_RECIPE_SUCCESS, payload: res.data.recipe });
     })
@@ -80,11 +80,11 @@ export const ADD_RECIPE_FAILURE = "ADD_RECIPE_FAILURE";
 export const addRecipe = (newRecipe, history) => (dispatch) => {
   dispatch({ type: ADD_RECIPE_START });
   axiosWithAuth()
-    .post("/recipes", newRecipe)
+    .post("/api/recipe/new", newRecipe)
     .then((res) => {
       dispatch({ type: ADD_RECIPE_SUCCESS, payload: res.data });
       const recipe_id = res.data[res.data.length - 1].id;
-      history.push(`/recipes/view/${recipe_id}`);
+      history.push(`/api/recipe/new/${recipe_id}`);
     })
     .catch((err) => {
       dispatch({ type: ADD_RECIPE_FAILURE, payload: err });
@@ -100,11 +100,11 @@ export const updateRecipe = (recipeID, updatedRecipe, history) => (
 ) => {
   dispatch({ type: UPDATE_RECIPE_START });
   axiosWithAuth()
-    .put(`/recipes/${recipeID}`, updatedRecipe)
+    .put(`/api/recipe/id/${recipeID}`, updatedRecipe)
     .then((res) => {
       dispatch({ type: UPDATE_RECIPE_SUCCESS, payload: res.data });
       const recipe_id = res.data.id;
-      history.push(`/recipes/view/${recipe_id}`);
+      history.push(`/api/recipe/nxew/${recipe_id}`);
     })
     .catch((err) => {
       dispatch({ type: UPDATE_RECIPE_FAILURE, payload: err });
@@ -118,7 +118,7 @@ export const DELETE_RECIPE_FAILURE = "DELETE_RECIPE_FAILURE";
 export const deleteRecipe = (recipeID, history) => (dispatch) => {
   dispatch({ type: DELETE_RECIPE_START });
   axiosWithAuth()
-    .delete(`/recipes/${recipeID}`)
+    .delete(`/api/recipe/id/${recipeID}`)
     .then((res) => {
       dispatch({ type: DELETE_RECIPE_SUCCESS, payload: res.data });
       history.push("/");
@@ -135,7 +135,7 @@ export const FETCH_TITLES_FAILURE = "FETCH_TITLES_FAILURE";
 export const getTitles = (recipeID) => (dispatch) => {
   dispatch({ type: FETCH_TITLES_START });
   axiosWithAuth()
-    .get(`/recipes`)
+    .get(`/recipe`)
     .then((res) => {
       dispatch({ type: FETCH_TITLES_SUCCESS, payload: res.data });
     })
