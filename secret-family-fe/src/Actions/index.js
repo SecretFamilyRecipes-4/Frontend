@@ -1,5 +1,5 @@
 import axios from "axios";
-import { axiosWithAuth } from "../util/axiosWithAuth";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 export const SIGN_UP_START = "SIGN_UP_START";
 export const SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
@@ -13,7 +13,7 @@ export const signUp = (credentials, history) => (dispatch) => {
   dispatch({ type: SIGN_UP_START });
   axios
     //need API
-    // .post("", creds)
+    .post("https://secret-recipe-store.herokuapp.com", creds)
     .then((res) => {
       dispatch({ type: SIGN_UP_SUCCESS });
       if (res.data.token) {
@@ -38,10 +38,7 @@ export const logIn = (credentials, history) => (dispatch) => {
   dispatch({ type: LOG_IN_START });
   axios
     //NEED
-    //.post(
-    //   "",
-    //   credentials
-    // )
+    .post("https://secret-recipe-store.herokuapp.com", credentials)
     .then((res) => {
       dispatch({ type: LOG_IN_SUCCESS });
       localStorage.setItem("token", res.data.token);
