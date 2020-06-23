@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { addRecipe } from "../actions";
-import ShowRecipeItem from "./ShowRecipeItem";
+import ShowArrayItem from "./ShowArrayItem";
 
 class RecipeForm extends React.Component {
   state = {
@@ -175,7 +175,7 @@ class RecipeForm extends React.Component {
 
             {this.state.ingredients.map((ingredient, index) => (
               <div className='ingredient'>
-                <ShowRecipeItem
+                <ShowArrayItem
                   listNum={index + 1}
                   item={ingredient}
                   key={index}
@@ -198,7 +198,7 @@ class RecipeForm extends React.Component {
             <button onClick={this.addDirection}>Plus</button>
             {this.state.directions.map((direction, index) => (
               <div className='direction'>
-                <ShowRecipeItem
+                <ShowArrayItem
                   listNum={index + 1}
                   item={direction}
                   key={index}

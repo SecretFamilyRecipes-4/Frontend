@@ -1,6 +1,6 @@
 import React from "react";
 
-const ShowRecipeItem = ({ listNum, item }) => {
+const ShowArrayItem = ({ listNum, item }) => {
   return (
     <div>
       <span>{listNum}</span>
@@ -8,4 +8,4 @@ const ShowRecipeItem = ({ listNum, item }) => {
     </div>
   );
 };
-export default ShowRecipeItem;
+export default ShowArrayItem;
