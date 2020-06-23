@@ -13,7 +13,8 @@ export const signUp = (credentials, history) => (dispatch) => {
   dispatch({ type: SIGN_UP_START });
   axios
     //need API
-    .post("https://secret-recipe-store.herokuapp.com", creds)
+    ///api/users/register
+    .post("https://secret-recipe-store.herokuapp.com/api/users/register", creds)
     .then((res) => {
       dispatch({ type: SIGN_UP_SUCCESS });
       if (res.data.token) {
@@ -38,7 +39,12 @@ export const logIn = (credentials, history) => (dispatch) => {
   dispatch({ type: LOG_IN_START });
   axios
     //NEED
-    .post("https://secret-recipe-store.herokuapp.com", credentials)
+
+    ///api/users/login
+    .post(
+      "https://secret-recipe-store.herokuapp.com/api/users/login",
+      credentials
+    )
     .then((res) => {
       dispatch({ type: LOG_IN_SUCCESS });
       localStorage.setItem("token", res.data.token);
