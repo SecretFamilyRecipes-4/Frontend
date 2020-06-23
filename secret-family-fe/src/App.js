@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Navigation from './components/Navigation';
 import SignUp from './components/SignUpForm';
@@ -5,6 +6,8 @@ import LogIn from './components/LogIn';
 import Footer from './components/Footer';
 import { Route, Link, Switch } from "react-router-dom";
 
+import "./css/main.css";
+import "./App.css";
 
 function App() {
   const [app, setApp] = useState("");
