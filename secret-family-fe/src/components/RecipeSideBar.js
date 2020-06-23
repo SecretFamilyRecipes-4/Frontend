@@ -18,7 +18,7 @@ class RecipeSideBar extends React.Component {
           {this.props.currentRecipes.map((title) => {
             return (
               <div className='recipe-card'>
-                <Link to={`/recipes/view/${title.id}`} key={title.id}>
+                <Link to={`/api/recipe/view/${title.id}`} key={title.id}>
                   <h3>{title.title}</h3>
                   <p>Source: {title.source}</p>
                   <div className='recipe-card-tags'>

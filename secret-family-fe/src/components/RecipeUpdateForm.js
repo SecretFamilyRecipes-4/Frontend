@@ -38,7 +38,7 @@ class RecipeUpdateForm extends React.Component {
   componentDidMount() {
     if (!this.props.recipe) {
       axiosWithAuth()
-        .get(`/recipes/${this.props.match.params.id}`)
+        .get(`/api/recipe/${this.props.match.params.id}`)
         .then((res) => {
           this.setState({
             title: res.data.recipe.title,
