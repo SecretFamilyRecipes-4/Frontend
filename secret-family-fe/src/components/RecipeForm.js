@@ -198,7 +198,7 @@ class RecipeForm extends React.Component {
               value={this.state.directionValue}
               placeholder='Direction'
             />
-            <button onClick={this.addDirection}>Plus</button>
+            <button onClick={this.addDirection}>Add</button>
             {this.state.directions.map((direction, index) => (
               <div className='direction'>
                 <ShowArrayItem
@@ -210,7 +210,7 @@ class RecipeForm extends React.Component {
                   className='direction-btn'
                   onClick={(e) => this.deleteDirection(e, index)}
                 >
-                  Delete Direction
+                  Delete
                 </button>
               </div>
             ))}
@@ -235,7 +235,7 @@ class RecipeForm extends React.Component {
                 onChange={this.handleChanges}
                 value={this.state.tag}
               />
-              <button onClick={this.addCustomTag}>Add Custom Tag</button>
+              <button onClick={this.addCustomTag}>Add Tag</button>
               {this.state.tags.map((tag, index) => (
                 <div className='tag'>
                   <p>{tag}</p>

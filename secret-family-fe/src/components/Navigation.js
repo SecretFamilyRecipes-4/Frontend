@@ -13,9 +13,13 @@ const Navigation = ({ history }) => {
         <p className='nav-title'>Secret Family Recipes Cookbook</p>
       </div>
       <div className='links'>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to='/add-recipe'>Add New Recipe</NavLink>
-        <button onClick={signOut}>Sign Out</button>
+        <button className='add-recipe-btn'>
+          <NavLink to='/add-recipe'>Add New Recipe</NavLink>
+        </button>
+
+        <button className='sign-out-btn' onClick={signOut}>
+          Sign Out
+        </button>
       </div>
     </nav>
   );
