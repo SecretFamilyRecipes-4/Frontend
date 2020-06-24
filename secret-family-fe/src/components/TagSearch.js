@@ -68,11 +68,6 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, { getTitles })(TagSearch);
 
-// import React from "react";
-// import { connect } from "react-redux";
-// import { getTitles } from "../actions";
-// // import RecipeSidebar from "./RecipeSidebar";
-
 // class TagSearch extends React.Component {
 //   state = {
 //     currentTag: "all",

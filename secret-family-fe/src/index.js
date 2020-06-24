@@ -6,14 +6,14 @@ import logger from "redux-logger";
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "./reducers";
-
 import "./css/main.css";
-import App from './App.js'
-import LogIn from "./components/LogIn";
 
+import TagSearch from "./components/TagSearch";
+import LoginPage from "./views/LoginPage";
 import SignUpPage from "./views/SignUpPage";
 import AddRecipe from "./views/AddRecipe";
 import RecipesDashboard from "./views/RecipesDashboard";
+
 import SingleRecipe from "./views/SingleRecipe";
 import UpdateRecipe from "./views/UpdateRecipe";
 import PrivateRoute from "./components/PrivateRoute";
@@ -28,10 +28,16 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-
-
-      <App />
-
+      <Switch>
+        <PrivateRoute exact path='/' component={RecipesDashboard} />
+        {/* dashboard component insted?*/}
+        <Route path='/log-in' component={LoginPage} />
+        <Route path='/sign-up' component={SignUpPage} />
+        <PrivateRoute path='/recipes/view/:id' component={SingleRecipe} />
+        <PrivateRoute path='/recipes/edit/:id' component={UpdateRecipe} />
+        <PrivateRoute path='/add-recipe' component={AddRecipe} />
+        <PrivateRoute path='/search' component={TagSearch} />
+      </Switch>
     </Router>
   </Provider>,
   document.getElementById("root")
