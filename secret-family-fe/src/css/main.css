@@ -562,13 +562,14 @@ html {
   margin-left: 50px;
   margin-top: 80px;
   padding-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 24px;
   font-size: 32px;
   color: #07fe20;
 }
 
 .recipe-list {
   margin-left: 40px;
+  margin-top: 16px;
 }
 
 .dash-heading-div {
