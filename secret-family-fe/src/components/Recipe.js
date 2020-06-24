@@ -5,7 +5,6 @@ import { FaRegTrashAlt, FaRegEdit } from "react-icons/fa";
 
 import ShowArrayItem from "./ShowArrayItem";
 import { getRecipe, deleteRecipe } from "../actions";
-import "../less/Recipe.less";
 
 class Recipe extends React.Component {
   componentDidMount() {

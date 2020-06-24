@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { getTitles } from "../actions";
-import "../less/RecipeCards.less";
 
 class RecipeSideBar extends React.Component {
   componentDidMount() {

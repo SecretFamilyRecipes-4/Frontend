@@ -3,7 +3,6 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { logIn } from "../actions";
 import { withRouter } from "react-router";
-import "../less/SignInForm.less";
 
 class SignInForm extends React.Component {
   state = {

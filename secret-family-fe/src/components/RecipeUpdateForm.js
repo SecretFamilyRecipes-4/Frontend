@@ -5,7 +5,6 @@ import { withRouter } from "react-router-dom";
 import ShowArrayItem from "./ShowArrayItem";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { FaRegTrashAlt } from "react-icons/fa";
-import "../less/RecipeUpdateForm.less";
 
 class RecipeUpdateForm extends React.Component {
   state = {
