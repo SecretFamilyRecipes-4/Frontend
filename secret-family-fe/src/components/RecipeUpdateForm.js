@@ -2,10 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { getRecipe, updateRecipe } from "../actions";
 import { withRouter } from "react-router-dom";
-import ShowRecipeItem from "./ShowRecipeItem";
+import ShowArrayItem from "./ShowArrayItem";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-import { FaRegTrashAlt, FaRegEdit } from "react-icons/fa";
-// import "../less/RecipeUpdateForm.less";
+import { FaRegTrashAlt } from "react-icons/fa";
+import "../less/RecipeUpdateForm.less";
 
 class RecipeUpdateForm extends React.Component {
   state = {
@@ -38,7 +38,7 @@ class RecipeUpdateForm extends React.Component {
   componentDidMount() {
     if (!this.props.recipe) {
       axiosWithAuth()
-        .get(`/api/recipe/${this.props.match.params.id}`)
+        .get(`/recipes/${this.props.match.params.id}`)
         .then((res) => {
           this.setState({
             title: res.data.recipe.title,
@@ -236,7 +236,7 @@ class RecipeUpdateForm extends React.Component {
             <div className='ingredients-list'>
               {this.state.ingredients.map((ingredient, index) => (
                 <div className='ingredient'>
-                  <ShowRecipeItem
+                  <ShowArrayItem
                     listNum={index + 1}
                     item={ingredient}
                     key={index}
@@ -264,7 +264,7 @@ class RecipeUpdateForm extends React.Component {
             <button onClick={this.addDirection}>Plus</button>
             {this.state.directions.map((direction, index) => (
               <div className='direction'>
-                <ShowRecipeItem
+                <ShowArrayItem
                   listNum={index + 1}
                   item={direction}
                   key={index}

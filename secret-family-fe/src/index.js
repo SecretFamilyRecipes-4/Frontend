@@ -5,10 +5,12 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
-import appReducer from "./reducers";
+import rootReducer from "./reducers";
+
 import "./css/main.css";
 import App from './App.js'
 import LogIn from "./components/LogIn";
+
 import SignUpPage from "./views/SignUpPage";
 import AddRecipe from "./views/AddRecipe";
 import RecipesDashboard from "./views/RecipesDashboard";
@@ -19,7 +21,7 @@ import PrivateRoute from "./components/PrivateRoute";
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-  appReducer,
+  rootReducer,
   composeEnhancers(applyMiddleware(thunk, logger))
 );
 
@@ -27,7 +29,9 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
 
-      <App></App>
+
+      <App />
+
     </Router>
   </Provider>,
   document.getElementById("root")

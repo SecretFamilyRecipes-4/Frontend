@@ -126,24 +126,19 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.tag {
+/* .tag {
   border: 1px solid black;
   padding: 0.2em 0.1em;
   margin: 0.2em;
   min-width: 50px;
   text-align: center;
   width: auto;
-}
-/* green: #07FE20
-gray: #828080
-mine shaft: #2F2D2d
-Brand Black: ##1F1E1E */
+} */
 html {
-  font-family: "Lato", Arial, Helvetica, sans-serif;
-  background-color: #1f1e1e;
-  color: white;
+  font-family: "Lora", serif;
+  background-color: whitesmoke;
 }
-.signup-page-wrapper {
+/* .signup-page-wrapper {
   width: 80vw;
   height: 80vh;
   background-color: #136b72;
@@ -169,7 +164,7 @@ html {
 }
 .signup-form input {
   width: 94%;
-  color: #2f2d2d;
+  color: darkslategray;
   padding: 0.5em;
   border-radius: 5px;
   border: 2px solid #d8e4da;
@@ -185,7 +180,7 @@ html {
 }
 .signup-form-header h2 {
   font-size: 1.5em;
-  color: #2f2d2d;
+  color: #136b72;
 }
 .signup-logo {
   display: block;
@@ -199,12 +194,8 @@ html {
   font-size: 1em;
   padding: 0.5em;
   border-radius: 5px;
-  background-color: #2f2d2d;
-  /* green: #07FE20
-gray: #828080
-mine shaft: #2F2D2d
-Brand Black: ##1F1E1E */
-  color: #2f2d2d;
+  background-color: #1a949e;
+  color: #d8e4da;
   text-align: center;
   width: 100%;
   height: auto;
@@ -214,8 +205,7 @@ Brand Black: ##1F1E1E */
   margin: 1em auto 3px;
 }
 .signup-btn:hover {
-  background-color: #2f2d2d;
-  color: white;
+  background-color: #136b72;
 }
 .signup-small-font {
   font-size: 0.85em;
@@ -223,23 +213,14 @@ Brand Black: ##1F1E1E */
   text-align: right;
 }
 .signup-link {
-  color: #07fe20;
+  color: #136b72;
 }
-/* green: #07FE20
-gray: #828080
-mine shaft: #2F2D2d
-Brand Black: ##1F1E1E */
-
 .login-page-wrapper {
   width: 80vw;
   height: 80vh;
-  background-color: #2f2d2d;
+  background-color: #136b72;
   padding: 5vw 10vw 10vw;
 }
-/* green: #07FE20
-gray: #828080
-mine shaft: #2F2D2d
-Brand Black: ##1F1E1E */
 .login-form-wrapper {
   margin: 10vh auto;
   width: 80vw;
@@ -258,13 +239,9 @@ Brand Black: ##1F1E1E */
   top: 10%;
   width: 35vw;
 }
-/* green: #07FE20
-gray: #828080
-mine shaft: #2F2D2d
-Brand Black: ##1F1E1E */
 .login-form input {
   width: 94%;
-  color: #2f2d2d;
+  color: darkslategray;
   padding: 0.5em;
   border-radius: 5px;
   border: 2px solid #d8e4da;
@@ -283,14 +260,9 @@ Brand Black: ##1F1E1E */
 .login-form-header {
   text-align: center;
 }
-
-/* green: #07FE20
-gray: #828080
-mine shaft: #2F2D2d
-Brand Black: ##1F1E1E */
 .login-form-header h2 {
   font-size: 1.5em;
-  color: #2f2d2d;
+  color: #136b72;
   margin-top: 0.5em;
 }
 .login-form-header h3 {
@@ -305,16 +277,12 @@ Brand Black: ##1F1E1E */
   margin-right: auto;
   margin-bottom: 5px;
 }
-/* green: #07FE20
-gray: #828080
-mine shaft: #2F2D2d
-Brand Black: ##1F1E1E */
 .login-btn {
   font-size: 1em;
   padding: 0.5em;
   border-radius: 5px;
-  background-color: #2f2d2d;
-  color: #07fe20;
+  background-color: #1a949e;
+  color: #d8e4da;
   text-align: center;
   width: 100%;
   height: auto;
@@ -324,12 +292,11 @@ Brand Black: ##1F1E1E */
   margin: 1.5em auto 3px;
 }
 .login-btn:hover {
-  background-color: #2f2d2d;
-  color: white;
+  background-color: #136b72;
 }
 .login-link {
-  color: #07fe20;
-}
+  color: #136b72;
+} */
 .recipe-cards-wrapper {
   display: flex;
   flex-direction: row;
@@ -363,7 +330,7 @@ Brand Black: ##1F1E1E */
 .nav {
   display: flex;
   justify-content: space-between;
-  background: #2f2d2d;
+  background: #aae4ec;
 }
 .nav-logo-set {
   display: flex;
@@ -374,17 +341,12 @@ Brand Black: ##1F1E1E */
   height: 80px;
   width: 80px;
 }
-/* green: #07FE20
-gray: #828080
-mine shaft: #2F2D2d
-Brand Black: ##1F1E1E */
-
 .nav-title {
   display: flex;
   align-items: center;
   padding-bottom: 5px;
   font-size: 60px;
-  color: whitesmoke;
+  color: #136b72;
 }
 .search-wrapper {
   width: 100%;
@@ -411,4 +373,131 @@ Brand Black: ##1F1E1E */
 }
 .recipe-view-wrapper h2 {
   font-size: 1.5em;
+}
+
+.recipe-form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin: 24px;
+  padding: 18px;
+}
+
+.recipe-form h2 {
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.recipe-form input {
+  height: 32px;
+  width: 250px;
+  border-radius: 8px;
+  margin: 16px;
+  margin-left: 0;
+}
+
+.recipe-form h3 {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.recipe-form button {
+  background-color: #1f1e1e;
+  color: #07fe20;
+  border-radius: 8px;
+  width: 150px;
+  height: 32px;
+}
+
+.tag {
+  margin: 16px;
+}
+
+.tag-input {
+  width: 100px;
+}
+
+.tags-wrapper button {
+  margin: 8px;
+}
+
+.note-input {
+  width: 800px;
+}
+
+.note-heading {
+  margin: 0;
+}
+
+.add-note-btn {
+  margin-bottom: 24px;
+}
+
+.form-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-recipe-btn {
+  width: 300px;
+  height: 32px;
+  background-color: #07fe20;
+  color: #1f1e1e;
+}
+
+.tags-wrapper {
+  margin-top: 24px;
+}
+
+.direction {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.direction-div {
+  margin-top: 16px;
+}
+
+.direction-btn {
+  margin-top: 8px;
+}
+
+.del-ingred-btn {
+  margin-top: 16px;
+}
+
+.ingredients-wrapper {
+  margin-bottom: 36px;
+}
+
+.recipe-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recipe-card {
+  width: 200px;
+  margin: 1em;
+  padding: 0.5em;
+
+  background: linear-gradient(white, lightgray);
+
+  border-radius: 5px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+
+  text-decoration: none;
+}
+
+.recipe-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 800px;
+  overflow: hidden;
 }

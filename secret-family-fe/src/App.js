@@ -11,12 +11,9 @@ import AddRecipe from "./views/AddRecipe";
 import RecipesDashboard from "./views/RecipesDashboard";
 import SingleRecipe from "./views/SingleRecipe";
 import UpdateRecipe from "./views/UpdateRecipe";
-import "./css/main.css";
-import "./App.css";
 
 function App() {
   const [app, setApp] = useState("");
-
 
   return (
     <div className='App'>
@@ -35,7 +32,6 @@ function App() {
 
     </div>
   );
-}
+
 
 export default App;
-         
