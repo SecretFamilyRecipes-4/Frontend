@@ -557,3 +557,20 @@ html {
 .nav p {
   color: white;
 }
+
+.dash-heading {
+  margin-left: 50px;
+  margin-top: 80px;
+  padding-top: 50px;
+  margin-bottom: 50px;
+  font-size: 32px;
+  color: #07fe20;
+}
+
+.recipe-list {
+  margin-left: 40px;
+}
+
+.dash-heading-div {
+  background-color: #1f1e1e;
+}

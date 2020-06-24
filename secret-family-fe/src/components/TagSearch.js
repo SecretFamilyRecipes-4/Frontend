@@ -40,7 +40,11 @@ class TagSearch extends React.Component {
 
   render() {
     if (!this.props.titles) {
-      return <h2>Loading...</h2>;
+      return (
+        <div className='dash-heading-div'>
+          <h2 className='dash-heading'>Your Recipes</h2>;
+        </div>
+      );
     } else {
       return (
         <div className='search-wrapper'>

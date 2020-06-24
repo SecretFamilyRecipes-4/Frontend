@@ -145,7 +145,11 @@ class RecipeForm extends React.Component {
     return (
       <div className='recipe-form'>
         <h2>Create New Recipe</h2>
-        <form className='form-items' onSubmit={this.submitRecipe}>
+        <form
+          key='recipeform'
+          className='form-items'
+          onSubmit={this.submitRecipe}
+        >
           <input
             placeholder='Title'
             type='text'
@@ -161,7 +165,7 @@ class RecipeForm extends React.Component {
             onChange={this.handleChanges}
             value={this.state.source}
           />
-          <div className='ingredients-wrapper'>
+          <div key='ingred2' className='ingredients-wrapper'>
             <h3>Ingredients</h3>
 
             <input
@@ -174,7 +178,7 @@ class RecipeForm extends React.Component {
             <button onClick={this.addIngredient}>Add Ingredient</button>
 
             {this.state.ingredients.map((ingredient, index) => (
-              <div className='ingredient'>
+              <div key='ingredient' className='ingredient'>
                 <ShowArrayItem
                   listNum={index + 1}
                   item={ingredient}
@@ -200,7 +204,7 @@ class RecipeForm extends React.Component {
             />
             <button onClick={this.addDirection}>Add</button>
             {this.state.directions.map((direction, index) => (
-              <div className='direction'>
+              <div key='direction' className='direction'>
                 <ShowArrayItem
                   listNum={index + 1}
                   item={direction}

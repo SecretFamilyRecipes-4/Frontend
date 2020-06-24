@@ -2,13 +2,15 @@ import React from "react";
 
 const RecipeCard = (props) => {
   return (
-    <div className='recipe-card'>
+    <div key='rectag' className='recipe-card'>
       <h3>{props.recipe.title}</h3>
       <p>Source: {props.recipe.source}</p>
-      <div className='recipe-card-tags'>
+      <div key='tagrc' className='recipe-card-tags'>
         {/* <span>Tags:</span> */}
         {props.recipe.tags.map((tag) => (
-          <p className='tag'>{tag} </p>
+          <p key={props.recipe.id} className='tag'>
+            {tag}{" "}
+          </p>
         ))}
       </div>
     </div>

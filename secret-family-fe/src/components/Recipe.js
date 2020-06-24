@@ -28,7 +28,7 @@ class Recipe extends React.Component {
 
   render() {
     if (this.props.fetchingRecipe || !this.props.recipe) {
-      return <h2>Loading Recipe for Single Recipe Page...</h2>;
+      return <h2>Getting your recipe...</h2>;
     }
     return (
       <div className='recipe-view-wrapper'>
@@ -38,7 +38,7 @@ class Recipe extends React.Component {
         <h3>Tags</h3>
         <div className='tags'>
           {this.props.recipe.tags.map((tag, index) => (
-            <p key={`t${index}`} className='tag'>
+            <p key={`t${index}a`} className='tag'>
               {tag}
             </p>
           ))}
@@ -48,7 +48,7 @@ class Recipe extends React.Component {
           <ShowArrayItem
             listNum={index + 1}
             item={ingredient}
-            key={`i${index}`}
+            key={`i${index}b`}
           />
         ))}
         <h3>Directions</h3>
@@ -56,7 +56,7 @@ class Recipe extends React.Component {
           <ShowArrayItem
             listNum={index + 1}
             item={instruction}
-            key={`d${index}`}
+            key={`b${index}c`}
           />
         ))}
         <h3>Note</h3>

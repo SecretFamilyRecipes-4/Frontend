@@ -1,5 +1,65 @@
+import React from "react";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { Link } from "react-router-dom";
+import RecipeCard from "./RecipeCard";
+
+export default class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      recipes: [],
+    };
+  }
+
+  componentDidMount() {
+    console.log("Mounted");
+    axiosWithAuth()
+      .get("/recipes")
+      .then((res) => {
+        console.log(res);
+        this.setState({ recipes: res.data.recipes });
+      })
+      .catch((err) => console.log(err.response));
+  }
+
+  render() {
+    console.log("render recipes List");
+    return (
+      <div className='recipe-list'>
+        {this.state.recipes.map((recipe) => (
+          <RecipeDetails key={recipe.id} recipe={recipe} />
+        ))}
+      </div>
+    );
+  }
+}
+
+function RecipeDetails({ recipe }) {
+  return (
+    <Link to={`/recipes/${recipe.id}`}>
+      <RecipeCard recipe={recipe} />
+    </Link>
+  );
+}
+
 // import React from "react";
-// import RecipeCard from "../components/RecipeCard"
+// // import RecipeCard from "../components/RecipeCard"
+
+// class Dashboard extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {};
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <h1>"THIS IS THE DASHBOARD" );</h1>
+//       </div>
+//     );
+//   }
+// }
+
+// export default Dashboard;
 
 // class Dashboard extends React.Component {
 //   constructor(props) {
