@@ -168,10 +168,10 @@ html {
 }
 .signup-form input {
   width: 94%;
-  color: black;
+  color: darkslategray;
+  border: 2px solid gray;
   padding: 0.5em;
   border-radius: 5px;
-  border: 2px solid #d8e4da;
 }
 .signup-form input:focus {
   outline: none;
@@ -253,10 +253,10 @@ html {
 }
 .login-form input {
   width: 94%;
-  color: black;
+  color: darkslategray;
+  border: 2px solid gray;
   padding: 0.5em;
   border-radius: 5px;
-  border: 2px solid #d8e4da;
 }
 .login-form input:focus {
   outline: none;
