@@ -126,14 +126,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.tag {
+/* .tag {
   border: 1px solid black;
   padding: 0.2em 0.1em;
   margin: 0.2em;
   min-width: 50px;
   text-align: center;
   width: auto;
-}
+} */
 html {
   font-family: "Lora", serif;
   background-color: whitesmoke;
@@ -379,7 +379,125 @@ html {
   width: 90%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
   flex-wrap: wrap;
   margin: 24px;
   padding: 18px;
+}
+
+.recipe-form h2 {
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.recipe-form input {
+  height: 32px;
+  width: 250px;
+  border-radius: 8px;
+  margin: 16px;
+  margin-left: 0;
+}
+
+.recipe-form h3 {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.recipe-form button {
+  background-color: #1f1e1e;
+  color: #07fe20;
+  border-radius: 8px;
+  width: 150px;
+  height: 32px;
+}
+
+.tag {
+  margin: 16px;
+}
+
+.tag-input {
+  width: 100px;
+}
+
+.tags-wrapper button {
+  margin: 8px;
+}
+
+.note-input {
+  width: 800px;
+}
+
+.note-heading {
+  margin: 0;
+}
+
+.add-note-btn {
+  margin-bottom: 24px;
+}
+
+.form-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-recipe-btn {
+  width: 300px;
+  height: 32px;
+  background-color: #07fe20;
+  color: #1f1e1e;
+}
+
+.tags-wrapper {
+  margin-top: 24px;
+}
+
+.direction {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.direction-div {
+  margin-top: 16px;
+}
+
+.direction-btn {
+  margin-top: 8px;
+}
+
+.del-ingred-btn {
+  margin-top: 16px;
+}
+
+.ingredients-wrapper {
+  margin-bottom: 36px;
+}
+
+.recipe-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recipe-card {
+  width: 200px;
+  margin: 1em;
+  padding: 0.5em;
+
+  background: linear-gradient(white, lightgray);
+
+  border-radius: 5px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+
+  text-decoration: none;
+}
+
+.recipe-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 800px;
+  overflow: hidden;
 }
