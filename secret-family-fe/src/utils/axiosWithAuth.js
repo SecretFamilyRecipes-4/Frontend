@@ -7,7 +7,6 @@ export const axiosWithAuth = () => {
     headers: {
       Authorization: token,
     },
-    //add API address
-    baseURL: "https://secret-recipe-store.herokuapp.com",
+    baseURL: "https://lambdaschool-cookbook2.herokuapp.com",
   });
 };

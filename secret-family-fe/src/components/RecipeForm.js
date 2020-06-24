@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { addRecipe } from "../actions";
-import ShowRecipeItem from "./ShowRecipeItem";
+import ShowArrayItem from "./ShowArrayItem";
 
 class RecipeForm extends React.Component {
   state = {
@@ -145,7 +145,7 @@ class RecipeForm extends React.Component {
     return (
       <div className='recipe-form'>
         <h2>Create New Recipe</h2>
-        <form onSubmit={this.submitRecipe}>
+        <form className='form-items' onSubmit={this.submitRecipe}>
           <input
             placeholder='Title'
             type='text'
@@ -175,12 +175,15 @@ class RecipeForm extends React.Component {
 
             {this.state.ingredients.map((ingredient, index) => (
               <div className='ingredient'>
-                <ShowRecipeItem
+                <ShowArrayItem
                   listNum={index + 1}
                   item={ingredient}
                   key={index}
                 />
-                <button onClick={(e) => this.deleteIngredient(e, index)}>
+                <button
+                  className='del-ingred-btn'
+                  onClick={(e) => this.deleteIngredient(e, index)}
+                >
                   Delete Ingredient
                 </button>
               </div>
@@ -198,12 +201,15 @@ class RecipeForm extends React.Component {
             <button onClick={this.addDirection}>Plus</button>
             {this.state.directions.map((direction, index) => (
               <div className='direction'>
-                <ShowRecipeItem
+                <ShowArrayItem
                   listNum={index + 1}
                   item={direction}
                   key={index}
                 />
-                <button onClick={(e) => this.deleteDirection(e, index)}>
+                <button
+                  className='direction-btn'
+                  onClick={(e) => this.deleteDirection(e, index)}
+                >
                   Delete Direction
                 </button>
               </div>
@@ -223,6 +229,7 @@ class RecipeForm extends React.Component {
                 );
               })}
               <input
+                className='tag-input'
                 type='text'
                 name='tag'
                 onChange={this.handleChanges}
@@ -239,14 +246,19 @@ class RecipeForm extends React.Component {
               ))}
             </div>
           </div>
-          <h3>Note:</h3>
+
+          <h3 className='note-heading'>Note:</h3>
           <input
+            className='note-input'
             type='text'
             name='note'
             onChange={this.handleChanges}
             value={this.state.note}
           />
-          <button onClick={this.addNote}>Add Note</button>
+
+          <button className='add-note-btn' onClick={this.addNote}>
+            Add Note
+          </button>
           {this.state.fullNote.map((note, index) => (
             <div className='note'>
               <p>{note}</p>
@@ -255,8 +267,11 @@ class RecipeForm extends React.Component {
               </button>
             </div>
           ))}
-
-          <button type='submit'>Add Recipe</button>
+          <span className='add-recipe'>
+            <button className='add-recipe-btn' type='submit'>
+              Add Recipe
+            </button>{" "}
+          </span>
         </form>
       </div>
     );

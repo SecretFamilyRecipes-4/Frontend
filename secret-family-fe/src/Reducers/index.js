@@ -38,7 +38,7 @@ const initialState = {
   success: false,
 };
 
-const appReducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case SIGN_UP_START:
       return {
@@ -209,4 +209,4 @@ const appReducer = (state = initialState, action) => {
   }
 };
 
-export default appReducer;
+export default reducer;

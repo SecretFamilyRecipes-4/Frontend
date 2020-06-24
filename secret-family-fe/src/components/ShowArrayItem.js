@@ -1,11 +1,11 @@
 import React from "react";
 
-const ShowRecipeItem = ({ listNum, item }) => {
+const ShowArrayItem = ({ listNum, item }) => {
   return (
-    <div>
+    <div className='direction-div'>
       <span>{listNum}</span>
       <span>{item}</span>
     </div>
   );
 };
-export default ShowRecipeItem;
+export default ShowArrayItem;
