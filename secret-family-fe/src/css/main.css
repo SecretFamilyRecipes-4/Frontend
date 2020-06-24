@@ -168,7 +168,7 @@ html {
 }
 .signup-form input {
   width: 94%;
-  color: darkslategray;
+  color: black;
   padding: 0.5em;
   border-radius: 5px;
   border: 2px solid #d8e4da;
@@ -253,7 +253,7 @@ html {
 }
 .login-form input {
   width: 94%;
-  color: darkslategray;
+  color: black;
   padding: 0.5em;
   border-radius: 5px;
   border: 2px solid #d8e4da;
