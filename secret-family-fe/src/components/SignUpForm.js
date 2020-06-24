@@ -2,7 +2,6 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { signUp } from "../actions";
-import "../less/SignUpForm.less";
 
 class SignUpForm extends React.Component {
   state = {
