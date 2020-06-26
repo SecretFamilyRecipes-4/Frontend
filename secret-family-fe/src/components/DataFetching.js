@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import DataFetchingStyling from './DataFecthingStyling.js';
+
 
 function DataFetching() {
     const [posts, setPosts] = useState([])
@@ -16,14 +18,14 @@ function DataFetching() {
     }, [])
 
     return (
-        <div>
+        <DataFetchingStyling>
             <ul>
                 <li>
                     <h2>{posts.name}</h2>
                     <p>{posts.recipe}</p>
                 </li>
             </ul>
-        </div>
+        </DataFetchingStyling>
     )
 }
 

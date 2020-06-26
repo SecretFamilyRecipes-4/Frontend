@@ -75,7 +75,7 @@ function SignUp() {
   return (
     <SignUpFormStyling className='signup'>
   
-        <h2>Secret Family Recipie</h2>
+        <h2>Random Taco Recipie App</h2>
         <h3>SignUp Form</h3>
       
 
@@ -112,7 +112,7 @@ function SignUp() {
             {/* {errors.email.length > 0 ? (
               <p className='error'>{errors.email}</p>
             ) : null} */}
-          <button className='signup-btn' type='submit'>
+          <button className='signup-btn btn btn-default' type='submit'>
               Sign Up
             </button>
                <p className='signup-small-font'></p>

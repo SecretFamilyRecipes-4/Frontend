@@ -57,34 +57,6 @@ function LogIn() {
     });
 };
 
-  // const inputChange = (e) => {
-  //   yup
-  //     .reach(formSchema, e.target.username)
-  //     .validate(e.target.value)
-  //     .then((valid) => {
-  //       setErrors({
-  //         ...errors,
-  //         [e.target.username]: "",
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       setErrors({
-  //         ...errors,
-  //         [e.target.name]: err.errors[0],
-  //       });
-  //     });
-  // };
-  // const inputChange = (e) => {
-  //   const {name,value} = e.target;
-  //   setFormState({
-  //     ...formState,
-  //     [name]: value,
-  //     // e.target.type === "checkbox" ? e.target.checked : e.target.value,
-  //   })
-  //   };
-  //   validateChange(e);
-  //   setFormState(newFormData);
-  // };
   const formSubmit = (e) => {
     e.preventDefault();
     axios
@@ -103,7 +75,7 @@ function LogIn() {
   };
   return (
     <LogInFormStyling className='login'>
-      <h2>Secret Family Recipie</h2>
+      <h2>Random Taco Recipie App</h2>
       <h3>LogIn page</h3>
 
       <form className='form-inline' onSubmit={formSubmit}>
