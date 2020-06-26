@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import * as yup from "yup";
+import * as Yup from "yup";
 import axios from "axios";
+import SignUpFormStyling from "./SignUpFormStyling";
 
 
 function SignUp() {
-
   const [errors, setErrors] = useState({
     name: "",
     email: "",
-    submit: "",
+    
   });
 
   const [buttonDisabled, setButtonDisabled] = useState("");
@@ -19,13 +19,13 @@ function SignUp() {
     submit: false,
   });
   const [post, setPost] = useState([]);
-  const formSchema = yup.object().shape({
-    name: yup
+  const formSchema = Yup.object().shape({
+    name: Yup
       .string()
       .required("Enter your name here please")
-      .min(2, "Your real name must be longer than 2 characters"),
-    email: yup.string(),
-    submit: yup.boolean(),
+      .min(2, "Your email must be longer than 2 characters"),
+    email: Yup.string(),
+    submit: Yup.boolean(),
   });
 
   useEffect(() => {
@@ -35,33 +35,27 @@ function SignUp() {
     });
   });
 
-  const validateChange = (e) => {
-    yup
-      .reach(formSchema, e.target.name)
-      .validate(e.target.value)
-      .then((valid) => {
-        setErrors({
-          ...errors,
-          [e.target.name]: "",
-        });
-      })
-      .catch((err) => {
-        setErrors({
-          ...errors,
-          [e.target.name]: err.errors[0],
-        });
-      });
-  };
   const inputChange = (e) => {
-    e.persist();
-    const newFormData = {
-      ...formState,
-      [e.target.name]:
-        e.target.type === "checkbox" ? e.target.checked : e.target.value,
-    };
-    validateChange(e);
-    setFormState(newFormData);
-  };
+    const { name, value } = e.target;
+    Yup.reach(formSchema, name)
+        .validate(value)
+        .then(() => {
+            setErrors({
+                ...errors,
+                [name]: "",
+            });
+        })
+        .catch((err) => {
+            setErrors({
+                ...errors,
+                [name]: err.errors[0],
+            });
+        });
+    setFormState({
+        ...formState,
+        [name]: value,
+    });
+};
   const formSubmit = (e) => {
     e.preventDefault();
     axios
@@ -79,57 +73,56 @@ function SignUp() {
       });
   };
   return (
-    <div className='signup'>
+    <SignUpFormStyling className='signup'>
   
         <h2>Secret Family Recipie</h2>
         <h3>SignUp Form</h3>
       
 
-      <form className='form' onSubmit={formSubmit}>
+      <form className='form-inline' onSubmit={formSubmit}>
+        <div className="form-group">
             {/* //name */}
-            <label htmlFor='name'>
-              Name
-              <input
-                className='input'
-                type='text'
-                id='name'
-                name='name'
-                onChange={inputChange}
-                value={formState.name}
-              />
-                      {errors.name.length > 0 ? (
-                <p className='error'>{errors.name}</p>
-              ) : null}
-            </label>
-
-
-          {/* //email */}
-          <label htmlFor='email'>
-            Email
+            <label htmlFor='name'>Name</label>
             <input
-              className='input'
-              type='email'
-              id='email'
-              name='email'
+              className='input form-control'
+              type='text'
+              id='name'
+              name='name'
               onChange={inputChange}
-              value={formState.email}
+              value={formState.name}
             />
-            {errors.email.length > 0 ? (
-              <p className='error'>{errors.email}</p>
-            ) : null}
-          </label>
+        </div>
+                      {/* {errors.name.length > 0 ? (
+                <p className='error'>{errors.name}</p>
+              ) : null} */}
+            
 
+        <div className="form-group">
+          {/* //email */}
+          <label htmlFor='email'>Email</label>
+          <input
+            className='input form-control'
+            type='email'
+            id='email'
+            name='email'
+            onChange={inputChange}
+            value={formState.email}
+          />
+        </div> 
+            {/* {errors.email.length > 0 ? (
+              <p className='error'>{errors.email}</p>
+            ) : null} */}
           <button className='signup-btn' type='submit'>
               Sign Up
             </button>
                <p className='signup-small-font'></p>
                  Already a member up? Log in here{" "}
-              <Link to='/log-in' className='signup-link'>
+              <Link to='/login' className='signup-link'>
                   here
               </Link>
 
         </form>
-      </div>
+      </SignUpFormStyling>
     
   );
 }
